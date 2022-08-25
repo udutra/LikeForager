@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour{
     private Rigidbody2D m_Rigdbody;
     private Animator m_Animator;
     private Vector2 movementInput, mousePosition;
-    private bool isWalk, isLookLeft;
+    private bool isWalk, isLookLeft, isAction;
 
     public float movementSpeed;
 
@@ -26,26 +26,42 @@ public class PlayerController : MonoBehaviour{
             Flip();
         }
 
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetButtonDown("Fire1") && isAction == false) {
+            isAction = true;
             m_Animator.SetTrigger("Axe");
         }
 
         movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         isWalk = movementInput.magnitude != 0;
 
-        m_Rigdbody.velocity = movementInput * movementSpeed;
+        if (isAction == false) {
+            m_Rigdbody.velocity = movementInput * movementSpeed;
+        }
+        else if (isAction == true) {
+            m_Rigdbody.velocity = Vector2.zero;
+            isWalk = false;
+        }
+        
 
-
-
-
-
-        m_Animator.SetBool("IsWallk", isWalk);
+        m_Animator.SetBool("IsWalk", isWalk);
     }
 
-
     private void Flip() {
+
+        if (isAction == true) {
+            return;
+        }
+
         isLookLeft = !isLookLeft;
         float x = transform.localScale.x * -1;
         transform.localScale = new Vector3(x, 1, 1);
+    }
+
+    private void ActionDone() {
+        isAction = false;
+    }
+
+    public void AxeHit() {
+
     }
 }
