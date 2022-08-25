@@ -62,6 +62,6 @@ public class PlayerController : MonoBehaviour{
     }
 
     public void AxeHit() {
-
+        CoreGame._instance.gameManager.ObjectHit();
     }
 }
