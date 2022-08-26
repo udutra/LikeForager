@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour {
 
+    public int hitAmount;
+
     private void OnMouseOver() {
         CoreGame._instance.gameManager.ActiveCursor(this.gameObject);
     }
@@ -13,7 +15,11 @@ public class Mine : MonoBehaviour {
     }
 
     private void OnHit() {
-        CoreGame._instance.gameManager.DisableCursor();
-        Destroy(this.gameObject);
+        hitAmount--;
+
+        if (hitAmount <= 0) {
+            CoreGame._instance.gameManager.DisableCursor();
+            Destroy(this.gameObject);
+        }
     }
 }

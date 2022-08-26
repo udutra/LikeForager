@@ -6,12 +6,25 @@ public class GameManager : MonoBehaviour{
 
     private GameObject interactionObject;
     public GameObject actionCursor;
+    public float interactionDistance;
 
+    private void FixedUpdate() {
+        if (interactionObject != null) {
+            if (Vector2.Distance(CoreGame._instance.playerController.transform.position, interactionObject.transform.position) <= interactionDistance) {
+                actionCursor.SetActive(true);
+            }
+            else {
+                actionCursor.SetActive(false);
+            }
+        }
+    }
 
     public void ActiveCursor(GameObject obj) {
-        actionCursor.transform.position = obj.transform.position;
-        actionCursor.SetActive(true);
         interactionObject = obj;
+        if (Vector2.Distance(CoreGame._instance.playerController.transform.position, interactionObject.transform.position) <= interactionDistance) {
+            actionCursor.transform.position = obj.transform.position;
+            actionCursor.SetActive(true);
+        }
     }
 
     public void DisableCursor() {
@@ -23,6 +36,8 @@ public class GameManager : MonoBehaviour{
         if (interactionObject == null) {
             return;
         }
-        interactionObject.SendMessage("OnHit", SendMessageOptions.DontRequireReceiver);
+        if (actionCursor.activeSelf == true) {
+            interactionObject.SendMessage("OnHit", SendMessageOptions.DontRequireReceiver);
+        }
     }
 }

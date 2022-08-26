@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d21c1dc5486ee4b9ca9761da6e5430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitAmount: 2
 --- !u!61 &309954808
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3251,6 +3252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d21c1dc5486ee4b9ca9761da6e5430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitAmount: 3
 --- !u!61 &1405759304
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3375,6 +3377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionCursor: {fileID: 1024651026}
+  interactionDistance: 1.5
 --- !u!114 &1668476544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3388,6 +3391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1668476543}
+  playerController: {fileID: 1849107527}
 --- !u!4 &1668476545
 Transform:
   m_ObjectHideFlags: 0

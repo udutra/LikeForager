@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour{
     private Rigidbody2D m_Rigdbody;
     private Animator m_Animator;
     private Vector2 movementInput, mousePosition;
-    private bool isWalk, isLookLeft, isAction;
+    private bool isWalk, isLookLeft, isAction, isActionButton;
 
     public float movementSpeed;
 
@@ -27,6 +27,14 @@ public class PlayerController : MonoBehaviour{
         }
 
         if (Input.GetButtonDown("Fire1") && isAction == false) {
+            isActionButton = true;
+        }
+
+        if (Input.GetButtonUp("Fire1")) {
+            isActionButton = false;
+        }
+
+        if (isActionButton == true && isAction == false) {
             isAction = true;
             m_Animator.SetTrigger("Axe");
         }
