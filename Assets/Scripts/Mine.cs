@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Mine : MonoBehaviour {
+    
+    private int hitAmount;
+    public Item item;
 
-    public int hitAmount;
+    private void Start() {
+        hitAmount = item.hitAmount;
+    }
 
     private void OnMouseOver() {
         CoreGame._instance.gameManager.ActiveCursor(this.gameObject);
@@ -18,7 +23,7 @@ public class Mine : MonoBehaviour {
         hitAmount--;
 
         if (hitAmount <= 0) {
-            CoreGame._instance.gameManager.DisableCursor();
+            CoreGame._instance.gameManager.Loot(item, transform.position);
             Destroy(this.gameObject);
         }
     }

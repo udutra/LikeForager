@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour{
+public class GameManager : MonoBehaviour {
 
     private GameObject interactionObject;
     public GameObject actionCursor;
@@ -38,6 +38,18 @@ public class GameManager : MonoBehaviour{
         }
         if (actionCursor.activeSelf == true) {
             interactionObject.SendMessage("OnHit", SendMessageOptions.DontRequireReceiver);
+        }
+    }
+
+    public void Loot(Item item, Vector3 position) {
+        DisableCursor();
+
+        int dir = -1;
+
+        for (int i = 0; i < item.lootAmount; i++) {
+            GameObject loot = Instantiate(item.lootPrefab, position, transform.localRotation);
+            loot.SendMessage("Active", dir, SendMessageOptions.DontRequireReceiver);
+            dir *= -1;
         }
     }
 }
