@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class PlayerController : MonoBehaviour{
+public class PlayerController : MonoBehaviour {
 
     private Rigidbody2D m_Rigdbody;
     private Animator m_Animator;
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour{
             m_Rigdbody.velocity = Vector2.zero;
             isWalk = false;
         }
-        
+
 
         m_Animator.SetBool("IsWalk", isWalk);
     }
@@ -71,5 +71,19 @@ public class PlayerController : MonoBehaviour{
 
     public void AxeHit() {
         CoreGame._instance.gameManager.ObjectHit();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        switch (collision.gameObject.tag) {
+            case "Loot": {
+                    Item item = collision.gameObject.GetComponent<Loot>().item;
+                    CoreGame._instance.inventory.GetItem(item, 1);
+                    Destroy(collision.gameObject);
+                    break;
+                }
+            default: {
+                    break;
+                }
+        }
     }
 }
