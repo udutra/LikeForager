@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
 
@@ -10,7 +11,11 @@ public class Inventory : MonoBehaviour {
     //public Dictionary<Item, GameObject> inventorySlots = new();
     public GameObject inventoryPanel, slotPrefab;
     public RectTransform slotGrid;
-
+    
+    [Header("Item Onfo")]
+    public GameObject itemInfoWindow;
+    public Image itemImagem;
+    public Text itemName, itemType, itemUse, itemDesc;
 
     public void GetItem(Item item, int amount) {
         if (inventory.ContainsKey(item)) {
@@ -24,6 +29,7 @@ public class Inventory : MonoBehaviour {
     }
 
     public void ShowInventory() {
+        DisableItemInfoWindow();
         bool isActive = !inventoryPanel.activeSelf;
         inventoryPanel.SetActive(isActive);
 
@@ -45,5 +51,19 @@ public class Inventory : MonoBehaviour {
             inventorySlots.Add(i);
             i.GetComponent<InventorySlot>().UpdateSlot(item.Key, item.Value);
         }
+    }
+
+    public void ShowItemInfo(Item item) {
+        itemImagem.sprite = item.itemSprite;
+        itemName.text = item.itemName;
+        itemType.text = item.itemType.ToString();
+        itemUse.text = item.itemUseTxt;       
+        itemDesc.text = item.itemDescription;
+
+        itemInfoWindow.SetActive(true);
+    }
+
+    public void DisableItemInfoWindow() {
+        itemInfoWindow.SetActive(false);
     }
 }

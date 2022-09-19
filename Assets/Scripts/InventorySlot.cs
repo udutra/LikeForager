@@ -20,10 +20,10 @@ public class InventorySlot : MonoBehaviour {
     }
 
     public void MouseEnter() {
-
+        CoreGame._instance.inventory.ShowItemInfo(item);
     }
 
     public void MouseExit() {
-
+        CoreGame._instance.inventory.DisableItemInfoWindow();
     }
 }
