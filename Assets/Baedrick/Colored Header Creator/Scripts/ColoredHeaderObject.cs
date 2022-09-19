@@ -7,13 +7,13 @@ namespace Baedrick.ColoredHeaderCreator
 	{
 
 #if UNITY_EDITOR
-		public HeaderSettings headerSettings = new HeaderSettings();
+		public HeaderSettings headerSettings = new();
 
 		// If values change when in Edit Mode
 		void OnValidate()
 		{
 			EditorApplication.RepaintHierarchyWindow();
-			
+
 			gameObject.tag = headerSettings.editorOnly ? "EditorOnly" : "Untagged";
 		}
 #endif // UNITY_EDITOR

@@ -34,6 +34,10 @@ public class PlayerController : MonoBehaviour {
             isActionButton = false;
         }
 
+        if (Input.GetButtonDown("Cancel")) {
+            CoreGame._instance.inventory.ShowInventory();
+        }
+
         if (isActionButton == true && isAction == false) {
             isAction = true;
             m_Animator.SetTrigger("Axe");
