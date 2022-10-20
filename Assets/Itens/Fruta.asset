@@ -21,3 +21,5 @@ MonoBehaviour:
   itemSprite: {fileID: 318767657, guid: a54b382affd25eb4a81bef28048f243f, type: 3}
   lootPrefab: {fileID: 8851664823094517792, guid: 86d5d974ed133554db24c77ba4abf33a, type: 3}
   lootAmount: 2
+  energyAmount: 1
+  manaAmount: 0

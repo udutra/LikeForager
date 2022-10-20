@@ -11,4 +11,6 @@ public class Item : ScriptableObject {
     public Sprite itemSprite;
     public GameObject lootPrefab;
     public int lootAmount;
+    public int energyAmount;
+    public int manaAmount;
 }

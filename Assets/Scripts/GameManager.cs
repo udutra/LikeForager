@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class GameManager : MonoBehaviour {
     public GameObject actionCursor;
     public float interactionDistance;
     public float timeToDelete = 3f;
+    public int playerEnergy = 3;
+    public int playerEnergyMax = 5;
 
     private void FixedUpdate() {
         if (interactionObject != null) {
@@ -51,6 +54,17 @@ public class GameManager : MonoBehaviour {
             GameObject loot = Instantiate(item.lootPrefab, position, transform.localRotation);
             loot.SendMessage("Active", dir, SendMessageOptions.DontRequireReceiver);
             dir *= -1;
+        }
+    }
+
+    public bool IsNeedEnergy() {
+        return playerEnergy < playerEnergyMax;
+    }
+
+    public void SetPlayerEnnergy(int amount) {
+        playerEnergy += amount;
+        if (playerEnergy > playerEnergyMax) {
+            playerEnergy = playerEnergyMax;
         }
     }
 }

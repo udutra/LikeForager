@@ -25,7 +25,6 @@ public class InventorySlot : MonoBehaviour {
         }
     }
 
-
     public void UpdateSlot(Item i, int amount) {
         deleteBar.gameObject.SetActive(false);
         item = i;
@@ -36,7 +35,9 @@ public class InventorySlot : MonoBehaviour {
     public void OnSlotClick(BaseEventData data) {
         PointerEventData pointerData = data as PointerEventData;
         if (pointerData.button == PointerEventData.InputButton.Left) {
-            print("Esquerdo");
+            if (item.itemUse == ItemUse.CONSUMIVEL) {
+                CoreGame._instance.inventory.UseItem(item);
+            }
         }
         if (pointerData.button == PointerEventData.InputButton.Right) {
             isDelete = true;
