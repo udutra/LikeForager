@@ -1,5 +1,5 @@
 // Created by Dedrick "Baedrick" Koh
-// Version 2.1.r2
+// Version 2.1.r3
 //
 // Contains implementation of GUI window only.
 // Logic can be found in ColoredHeaderCreator.cs

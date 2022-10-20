@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
     private GameObject interactionObject;
     public GameObject actionCursor;
     public float interactionDistance;
+    public float timeToDelete = 3f;
 
     private void FixedUpdate() {
         if (interactionObject != null) {

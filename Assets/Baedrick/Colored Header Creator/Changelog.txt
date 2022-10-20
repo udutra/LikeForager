@@ -1,7 +1,6 @@
-V 2.1.r2
+V 2.1.r3
+- Fixed SendMessage warning.
 - Optimized Header monobehavior script.
-
-V 2.1.r1
 - Improved Undo functionality.
 - Ensured editor window is refreshed after each undo action.
 

@@ -24,8 +24,6 @@ public class Inventory : MonoBehaviour {
         else {
             inventory.Add(item, amount);
         }
-
-        print(inventory[item]);
     }
 
     public void ShowInventory() {
@@ -65,5 +63,11 @@ public class Inventory : MonoBehaviour {
 
     public void DisableItemInfoWindow() {
         itemInfoWindow.SetActive(false);
+    }
+
+    public void DeleteItem(Item item) {
+        inventory.Remove(item);
+        UpdateInventory();
+        DisableItemInfoWindow();
     }
 }

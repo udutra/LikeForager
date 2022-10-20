@@ -1,3 +1,3 @@
 public enum ItemType {
-    WOOD, COAL, IRON, STONE, FRUIT
+    MADEIRA, CARVAO, FERRO, PEDRA, FRUTA
 }

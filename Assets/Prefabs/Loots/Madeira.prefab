@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7582685675300313646}
   - component: {fileID: 6468614167420135342}
   m_Layer: 0
-  m_Name: Stone
+  m_Name: Madeira
   m_TagString: Loot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1316040407, guid: a54b382affd25eb4a81bef28048f243f, type: 3}
+  m_Sprite: {fileID: -957219596, guid: a54b382affd25eb4a81bef28048f243f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.03570294}
+  m_Offset: {x: 0.032168627, y: -0.03141381}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -132,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.279588, y: 0.3183987}
+  m_Size: {x: 0.56267166, y: 0.56288004}
   m_EdgeRadius: 0
 --- !u!114 &6468614167420135342
 MonoBehaviour:
@@ -146,8 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23de8e7ad1989e74294c6c5291853505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startYposition: 0
-  m_rigidbody: {fileID: 0}
-  col: {fileID: 0}
-  isActive: 0
-  item: {fileID: 11400000, guid: f1087390365f44845955e6b03cedcd9e, type: 2}
+  item: {fileID: 11400000, guid: 6bdd1e3069cdc63499ab460cb2a81394, type: 2}

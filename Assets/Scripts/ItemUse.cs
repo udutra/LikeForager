@@ -1,3 +1,3 @@
 ﻿public enum ItemUse {
-    MATERIAL, CONSUMABLE
+    MATERIAL, CONSUMIVEL
 }

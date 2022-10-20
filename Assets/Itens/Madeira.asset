@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b7e20f2745373c48b2794647a85158c, type: 3}
-  m_Name: Stone
+  m_Name: Madeira
   m_EditorClassIdentifier: 
-  itemType: 3
+  itemType: 0
   itemUse: 0
-  itemDescription: Lasca de pedra.
-  itemUseTxt: Usado para construir.
-  hitAmount: 3
-  itemName: Pedra
-  itemSprite: {fileID: 1316040407, guid: a54b382affd25eb4a81bef28048f243f, type: 3}
-  lootPrefab: {fileID: 8851664823094517792, guid: 10a6790b2fc6f494cb08a34317f9bea9, type: 3}
+  itemDescription: Madeira
+  itemUseTxt: Usado para construir
+  hitAmount: 2
+  itemName: Madeira
+  itemSprite: {fileID: -957219596, guid: a54b382affd25eb4a81bef28048f243f, type: 3}
+  lootPrefab: {fileID: 8851664823094517792, guid: 69e4066b69b27294e985c14e96846b7e, type: 3}
   lootAmount: 2
