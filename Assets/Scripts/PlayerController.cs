@@ -17,6 +17,14 @@ public class PlayerController : MonoBehaviour {
 
     private void Update() {
 
+        if (Input.GetButtonDown("Cancel")) {
+            CoreGame._instance.inventory.ShowInventory();
+        }
+
+        if (CoreGame._instance.gameManager.gameState != GameState.GAMEPLAY) {
+            return;
+        }
+
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (mousePosition.x < transform.position.x && isLookLeft == false) {
@@ -34,10 +42,6 @@ public class PlayerController : MonoBehaviour {
             isActionButton = false;
         }
 
-        if (Input.GetButtonDown("Cancel")) {
-            CoreGame._instance.inventory.ShowInventory();
-        }
-
         if (isActionButton == true && isAction == false) {
             isAction = true;
             m_Animator.SetTrigger("Axe");
@@ -53,7 +57,6 @@ public class PlayerController : MonoBehaviour {
             m_Rigdbody.velocity = Vector2.zero;
             isWalk = false;
         }
-
 
         m_Animator.SetBool("IsWalk", isWalk);
     }

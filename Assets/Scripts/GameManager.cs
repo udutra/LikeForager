@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     private GameObject interactionObject;
+    public GameState gameState;
     public GameObject actionCursor;
     public float interactionDistance;
     public float timeToDelete = 3f;
@@ -24,6 +25,11 @@ public class GameManager : MonoBehaviour {
     }
 
     public void ActiveCursor(GameObject obj) {
+
+        if (gameState != GameState.GAMEPLAY) {
+            return;
+        }
+
         interactionObject = obj;
         if (Vector2.Distance(CoreGame._instance.playerController.transform.position, interactionObject.transform.position) <= interactionDistance) {
             actionCursor.transform.position = obj.transform.position;
@@ -67,4 +73,21 @@ public class GameManager : MonoBehaviour {
             playerEnergy = playerEnergyMax;
         }
     }
+
+    public void ChangeGameState(GameState newState) {
+        gameState = newState;
+        switch (gameState) {
+            case GameState.GAMEPLAY:
+                break;
+            case GameState.INVENTORY: {
+
+                    interactionObject = null;
+                    actionCursor.SetActive(false);
+                    break;
+                }
+            default:
+                break;
+        }
+    }
+
 }

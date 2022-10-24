@@ -5,12 +5,19 @@ public class Item : ScriptableObject {
     public ItemType itemType;
     public ItemUse itemUse;
     [TextArea(1, 4)] public string itemDescription;
-    public string itemUseTxt;
+
     public int hitAmount;
     public string itemName;
     public Sprite itemSprite;
     public GameObject lootPrefab;
     public int lootAmount;
-    public int energyAmount;
+
+    public bool isRecoverEnergy;
+    public int EnergyAmount;
+
+    public bool isRecoverMana;
     public int manaAmount;
+
+    public bool isRecoverHP;
+    public int HPAmount;
 }

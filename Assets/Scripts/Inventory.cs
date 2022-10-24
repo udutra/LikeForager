@@ -8,7 +8,6 @@ public class Inventory : MonoBehaviour {
     private List<GameObject> inventorySlots = new();
 
     public Dictionary<Item, int> inventory = new();
-    //public Dictionary<Item, GameObject> inventorySlots = new();
     public GameObject inventoryPanel, slotPrefab;
     public RectTransform slotGrid;
 
@@ -32,7 +31,11 @@ public class Inventory : MonoBehaviour {
         inventoryPanel.SetActive(isActive);
 
         if (isActive == true) {
+            CoreGame._instance.gameManager.ChangeGameState(GameState.INVENTORY);
             UpdateInventory();
+        }
+        else {
+            CoreGame._instance.gameManager.ChangeGameState(GameState.GAMEPLAY);
         }
     }
 
@@ -54,9 +57,40 @@ public class Inventory : MonoBehaviour {
     public void ShowItemInfo(Item item) {
         itemImagem.sprite = item.itemSprite;
         itemName.text = item.itemName;
-        itemType.text = item.itemType.ToString();
-        itemUse.text = item.itemUseTxt;
         itemDesc.text = item.itemDescription;
+        itemUse.text = "";
+
+
+        string itemCategory = "";
+
+        switch (item.itemUse) {
+            case ItemUse.MATERIAL: {
+                    itemCategory = "Material";
+                    break;
+                }
+            case ItemUse.CONSUMIVEL: {
+                    itemCategory = "Consumível";
+                    break;
+                }
+            default: { break; }
+        }
+
+        if (item.isRecoverEnergy == true) {
+            itemUse.text = "Recupera <color=#FF0000>" + item.EnergyAmount.ToString() + "</color> de Energia.\n";
+        }
+
+        if (item.isRecoverMana == true) {
+            itemUse.text += "Recupera <color=#FFFF00>" + item.manaAmount.ToString() + "</color> de Mana.\n";
+        }
+
+        if (item.isRecoverHP == true) {
+            itemUse.text += "Recupera <color=#0000FF>" + item.HPAmount.ToString() + "</color> de HP.";
+        }
+
+        itemType.text = itemCategory;
+
+
+
 
         itemInfoWindow.SetActive(true);
     }
@@ -75,24 +109,20 @@ public class Inventory : MonoBehaviour {
 
         if (inventory.ContainsKey(item)) {
 
-            switch (item.itemType) {
-                case ItemType.MADEIRA:
-                    break;
-                case ItemType.CARVAO:
-                    break;
-                case ItemType.FERRO:
-                    break;
-                case ItemType.PEDRA:
-                    break;
-                case ItemType.FRUTA: {
-                        if (CoreGame._instance.gameManager.IsNeedEnergy()) {
+            switch (item.itemUse) {
+                case ItemUse.CONSUMIVEL: {
+                        if (CoreGame._instance.gameManager.IsNeedEnergy() && item.isRecoverEnergy) {
                             UpdateItemInventory(item);
-                            CoreGame._instance.gameManager.SetPlayerEnnergy(item.energyAmount);
+                            CoreGame._instance.gameManager.SetPlayerEnnergy(item.EnergyAmount);
                         }
                         break;
                     }
-                default:
-                    break;
+                case ItemUse.MATERIAL: {
+                        break;
+                    }
+                default: {
+                        break;
+                    }
             }
         }
     }
