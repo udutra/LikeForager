@@ -8129,6 +8129,7 @@ GameObject:
   - component: {fileID: 1084024590}
   - component: {fileID: 1084024589}
   - component: {fileID: 1084024591}
+  - component: {fileID: 1084024592}
   m_Layer: 0
   m_Name: Main Island
   m_TagString: Untagged
@@ -8184,6 +8185,20 @@ MonoBehaviour:
   - resource: {fileID: 2957538844022062868, guid: 9247d20de67681a4aa315fd6f5be10f4, type: 3}
     amount: 1
   resourceIsland: []
+--- !u!114 &1084024592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084024588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9ef121f50d21d43a38d8e088e725d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialResources: 15
+  maxResources: 35
 --- !u!1001 &1090930954
 PrefabInstance:
   m_ObjectHideFlags: 0
