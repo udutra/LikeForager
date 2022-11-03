@@ -42,6 +42,15 @@ TagManager:
   - name: CamadaA
     uniqueID: 2625871355
     locked: 0
+  - name: SegundoPlano
+    uniqueID: 3225390029
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PrimeiroPlano
+    uniqueID: 676999095
+    locked: 0
+  - name: UI
+    uniqueID: 3849664441
     locked: 0

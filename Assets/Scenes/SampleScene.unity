@@ -4836,8 +4836,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1069577267
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: -1595140909, guid: 0417472e597a2ad489763ed84a2b3785, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5035,7 +5035,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1669095941
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -10583,6 +10583,8 @@ MonoBehaviour:
   timeToDelete: 3
   playerEnergy: 3
   playerEnergyMax: 5
+  distanceToSpawnResource: 2
+  timeToSpawnResource: 5
 --- !u!114 &1668476544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11386,6 +11388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
+  positionY: 0
 --- !u!1001 &1880448977
 PrefabInstance:
   m_ObjectHideFlags: 0

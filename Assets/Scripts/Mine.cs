@@ -15,6 +15,7 @@ public class Mine : MonoBehaviour {
     public void SetSlot(IslandSlotGrid s) {
         slot = s;
         transform.position = slot.transform.position;
+        GetComponent<SpriteRenderer>().sortingOrder = s.line;
     }
 
     private void OnMouseOver() {

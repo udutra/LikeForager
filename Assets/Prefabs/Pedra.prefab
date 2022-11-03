@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 813177240938125205}
   - component: {fileID: 813177240938125204}
   - component: {fileID: 813177240938125211}
+  - component: {fileID: -8277741789392988857}
   m_Layer: 0
   m_Name: Pedra
   m_TagString: Untagged
@@ -124,4 +125,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d21c1dc5486ee4b9ca9761da6e5430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slot: {fileID: 0}
   item: {fileID: 11400000, guid: f1087390365f44845955e6b03cedcd9e, type: 2}
+--- !u!114 &-8277741789392988857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813177240938125210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a592a94b248da4dafc3fc33ca35355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

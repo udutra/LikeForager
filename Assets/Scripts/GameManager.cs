@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour {
     public int playerEnergy = 3;
     public int playerEnergyMax = 5;
 
+    public float distanceToSpawnResource;
+    public float timeToSpawnResource;
+
     private void FixedUpdate() {
         if (interactionObject != null) {
             if (Vector2.Distance(CoreGame._instance.playerController.transform.position, interactionObject.transform.position) <= interactionDistance) {
@@ -90,4 +93,8 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public bool PlayerDistance(Vector3 position) {
+        float distance = Vector3.Distance(CoreGame._instance.playerController.transform.position, position);
+        return distance >= distanceToSpawnResource;
+    }
 }

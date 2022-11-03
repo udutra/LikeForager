@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour {
     private Animator m_Animator;
     private Vector2 movementInput, mousePosition;
     private bool isWalk, isLookLeft, isAction, isActionButton;
-
     public float movementSpeed;
+    public float positionY;
 
     private void Start() {
         m_Rigdbody = GetComponent<Rigidbody2D>();
@@ -59,6 +59,10 @@ public class PlayerController : MonoBehaviour {
         }
 
         m_Animator.SetBool("IsWalk", isWalk);
+    }
+
+    private void LateUpdate() {
+        positionY = transform.position.y;
     }
 
     private void Flip() {
