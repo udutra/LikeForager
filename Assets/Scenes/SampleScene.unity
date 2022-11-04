@@ -8179,16 +8179,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceLV1:
   - resource: {fileID: 1393745254897476805, guid: f001572f146cebe45bdcfc37415d0490, type: 3}
-    amount: 5
-  - resource: {fileID: 813177240938125210, guid: 21036b2d8baa42746ad7ff944ee7fe38, type: 3}
-    amount: 2
-  - resource: {fileID: 2957538844022062868, guid: 9247d20de67681a4aa315fd6f5be10f4, type: 3}
     amount: 1
   resourceLV2:
-  - resource: {fileID: 2251472458434868033, guid: 0b988e20b74280a4ab2b0cf7d77cc83d, type: 3}
+  - resource: {fileID: 813177240938125210, guid: 21036b2d8baa42746ad7ff944ee7fe38, type: 3}
     amount: 2
+  resourceLV3:
+  - resource: {fileID: 2957538844022062868, guid: 9247d20de67681a4aa315fd6f5be10f4, type: 3}
+    amount: 3
+  resourceLV4:
+  - resource: {fileID: 2251472458434868033, guid: 0b988e20b74280a4ab2b0cf7d77cc83d, type: 3}
+    amount: 4
+  resourceLV5:
   - resource: {fileID: 7011276046138066863, guid: a5ef26364d66b5c4284f4ffa5f7bb488, type: 3}
-    amount: 1
+    amount: 5
+  levelToupgrade: 010000000300000005000000070000000a000000
   resourceIsland: []
 --- !u!114 &1084024592
 MonoBehaviour:
@@ -10588,9 +10592,9 @@ MonoBehaviour:
   timeToDelete: 3
   playerEnergy: 3
   playerEnergyMax: 5
-  playerLevel: 2
+  playerLevel: 10
   distanceToSpawnResource: 2
-  timeToSpawnResource: 5
+  timeToSpawnResource: 0.2
 --- !u!114 &1668476544
 MonoBehaviour:
   m_ObjectHideFlags: 0
