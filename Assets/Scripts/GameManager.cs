@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
     public int playerLevel;
     public float distanceToSpawnResource;
     public float timeToSpawnResource;
+    public GameObject objectCraft;
 
     private void FixedUpdate() {
         if (interactionObject != null) {
@@ -80,8 +81,13 @@ public class GameManager : MonoBehaviour {
     public void ChangeGameState(GameState newState) {
         gameState = newState;
         switch (gameState) {
-            case GameState.GAMEPLAY:
-                break;
+            case GameState.GAMEPLAY: {
+                    break;
+                }
+            case GameState.CRAFT: {
+
+                    break;
+                }
             case GameState.INVENTORY: {
 
                     interactionObject = null;
@@ -96,5 +102,14 @@ public class GameManager : MonoBehaviour {
     public bool PlayerDistance(Vector3 position) {
         float distance = Vector3.Distance(CoreGame._instance.playerController.transform.position, position);
         return distance >= distanceToSpawnResource;
+    }
+
+    public void SetCraftObject(IslandSlotGrid slot) {
+        GameObject obj = Instantiate(objectCraft);
+        obj.transform.position = slot.transform.position;
+        slot.isBusy = true;
+        slot.ShowBorder(false);
+
+        ChangeGameState(GameState.GAMEPLAY);
     }
 }

@@ -1,3 +1,3 @@
 public enum GameState { 
-    GAMEPLAY, INVENTORY
+    GAMEPLAY, INVENTORY, CRAFT
 }

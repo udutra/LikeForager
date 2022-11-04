@@ -44,10 +44,26 @@ public class IslandManager : MonoBehaviour {
 
             yield return new WaitForSeconds(CoreGame._instance.gameManager.timeToSpawnResource);
             int count = slot.Where(x => x.isBusy == true).Count();
-            
+
             if (count < maxResources) {
                 NewResource();
             }
         }
+    }
+
+    public void CraftMode() {
+        StopCoroutine(SpawnResources());
+        foreach (IslandSlotGrid s in slot) {
+            if (s.isBusy) {
+                s.ShowBorder(true);
+            }
+        }
+    }
+
+    public void GamePlayMode() {
+        foreach (IslandSlotGrid s in slot) {
+            s.ShowBorder(false);
+        }
+        StartCoroutine(SpawnResources());
     }
 }

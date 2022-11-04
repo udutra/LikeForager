@@ -10595,6 +10595,7 @@ MonoBehaviour:
   playerLevel: 10
   distanceToSpawnResource: 2
   timeToSpawnResource: 0.2
+  objectCraft: {fileID: 5065775516494764767, guid: 686bf7ade1ab0a548b18bdf503d66839, type: 3}
 --- !u!114 &1668476544
 MonoBehaviour:
   m_ObjectHideFlags: 0
