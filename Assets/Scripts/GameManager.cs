@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
     public float timeToDelete = 3f;
     public int playerEnergy = 3;
     public int playerEnergyMax = 5;
-
+    public int playerLevel;
     public float distanceToSpawnResource;
     public float timeToSpawnResource;
 

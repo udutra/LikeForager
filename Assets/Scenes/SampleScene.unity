@@ -8184,6 +8184,11 @@ MonoBehaviour:
     amount: 2
   - resource: {fileID: 2957538844022062868, guid: 9247d20de67681a4aa315fd6f5be10f4, type: 3}
     amount: 1
+  resourceLV2:
+  - resource: {fileID: 2251472458434868033, guid: 0b988e20b74280a4ab2b0cf7d77cc83d, type: 3}
+    amount: 2
+  - resource: {fileID: 7011276046138066863, guid: a5ef26364d66b5c4284f4ffa5f7bb488, type: 3}
+    amount: 1
   resourceIsland: []
 --- !u!114 &1084024592
 MonoBehaviour:
@@ -10583,6 +10588,7 @@ MonoBehaviour:
   timeToDelete: 3
   playerEnergy: 3
   playerEnergyMax: 5
+  playerLevel: 2
   distanceToSpawnResource: 2
   timeToSpawnResource: 5
 --- !u!114 &1668476544
