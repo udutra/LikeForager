@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
     public float distanceToSpawnResource;
     public float timeToSpawnResource;
     public GameObject objectCraft;
+    public List<IslandManager> islands = new();
 
     private void FixedUpdate() {
         if (interactionObject != null) {
@@ -85,11 +86,10 @@ public class GameManager : MonoBehaviour {
                     break;
                 }
             case GameState.CRAFT: {
-
+                   
                     break;
                 }
             case GameState.INVENTORY: {
-
                     interactionObject = null;
                     actionCursor.SetActive(false);
                     break;
@@ -111,5 +111,18 @@ public class GameManager : MonoBehaviour {
         slot.ShowBorder(false);
 
         ChangeGameState(GameState.GAMEPLAY);
+        foreach (IslandManager im in islands) {
+            im.GamePlayMode();
+        }
+    }
+
+    public void StartCraftMode(GameObject obj) {
+        objectCraft = obj;
+        ChangeGameState(GameState.CRAFT);
+        foreach (IslandManager im in islands) {
+            im.CraftMode();
+        }
+
+        CoreGame._instance.inventory.inventoryPanel.SetActive(false);
     }
 }

@@ -17,6 +17,7 @@ public class IslandManager : MonoBehaviour {
             }
         }
         StartCoroutine(SpawnResources());
+        CoreGame._instance.gameManager.islands.Add(this);
     }
 
     private void NewResource() {
@@ -54,7 +55,7 @@ public class IslandManager : MonoBehaviour {
     public void CraftMode() {
         StopCoroutine(SpawnResources());
         foreach (IslandSlotGrid s in slot) {
-            if (s.isBusy) {
+            if (!s.isBusy) {
                 s.ShowBorder(true);
             }
         }

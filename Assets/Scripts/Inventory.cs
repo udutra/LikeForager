@@ -9,6 +9,8 @@ public class Inventory : MonoBehaviour {
 
     public Dictionary<Item, int> inventory = new();
     public GameObject inventoryPanel, slotPrefab;
+    public GameObject[] subPanel;
+    public int idSubPanel;
     public RectTransform slotGrid;
 
     [Header("Item Onfo")]
@@ -27,6 +29,7 @@ public class Inventory : MonoBehaviour {
 
     public void ShowInventory() {
         DisableItemInfoWindow();
+        InventoryTabs(0);
         bool isActive = !inventoryPanel.activeSelf;
         inventoryPanel.SetActive(isActive);
 
@@ -135,5 +138,12 @@ public class Inventory : MonoBehaviour {
         else {
             UpdateInventory();
         }
+    }
+
+    public void InventoryTabs(int idTab) {
+        foreach (GameObject t in subPanel) {
+            t.SetActive(false);
+        }
+        subPanel[idTab].SetActive(true);
     }
 }

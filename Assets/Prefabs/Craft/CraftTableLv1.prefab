@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5065775516494764765}
   - component: {fileID: 5065775516494764764}
   m_Layer: 0
-  m_Name: FornalhaLv1
+  m_Name: CraftTableLv1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -310221078, guid: cc9aef235fea01740b25af0dd6116156, type: 3}
+  m_Sprite: {fileID: 951981547, guid: cc9aef235fea01740b25af0dd6116156, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

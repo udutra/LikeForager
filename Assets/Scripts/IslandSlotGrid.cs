@@ -19,7 +19,7 @@ public class IslandSlotGrid : MonoBehaviour {
     }
 
     private void OnMouseDown() {
-        if (CoreGame._instance.gameManager.gameState == GameState.CRAFT && !isBusy) {
+        if (CoreGame._instance.gameManager.gameState == GameState.CRAFT && isBusy == false) {
             CoreGame._instance.gameManager.SetCraftObject(this);
         }
     }
