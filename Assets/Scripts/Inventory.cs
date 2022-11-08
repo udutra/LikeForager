@@ -18,6 +18,12 @@ public class Inventory : MonoBehaviour {
     public Image itemImagem;
     public Text itemName, itemType, itemUse, itemDesc;
 
+    public Button[] craftButtons;
+
+    private void Start() {
+        ShowInventory();
+    }
+
     public void GetItem(Item item, int amount) {
         if (inventory.ContainsKey(item)) {
             inventory[item] += amount;
@@ -145,5 +151,14 @@ public class Inventory : MonoBehaviour {
             t.SetActive(false);
         }
         subPanel[idTab].SetActive(true);
+        if (idTab == 1) {
+            CheckRecipes();
+        }
+    }
+
+    private void CheckRecipes() {
+        foreach (Button btn in craftButtons) {
+            btn.GetComponent<CheckRecipeIsReady>().CheckRecipe();
+        }
     }
 }

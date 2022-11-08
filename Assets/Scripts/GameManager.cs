@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour {
     public float timeToSpawnResource;
     public GameObject objectCraft;
     public List<IslandManager> islands = new();
+    public RecipeIsReady[] recipes;
 
     private void FixedUpdate() {
         if (interactionObject != null) {
