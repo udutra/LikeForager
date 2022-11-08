@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Update() {
 
-        if (Input.GetButtonDown("Cancel")) {
+        if (Input.GetButtonDown("Cancel") && CoreGame._instance.gameManager.gameState != GameState.CRAFT) {
             CoreGame._instance.inventory.ShowInventory();
         }
 
